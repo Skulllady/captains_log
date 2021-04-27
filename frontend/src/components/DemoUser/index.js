@@ -4,32 +4,24 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 function DemoUser() {
-  const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [credential, setCredential] = useState('');
   const [password, setPassword] = useState('');
-  const [errors, setErrors] = useState([]);
+  const dispatch = useDispatch();
 
   if (sessionUser) return (
     <Redirect to="/" />
   );
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setCredential("Demo-lition")
+    setPassword("password")
+    return dispatch(sessionActions.login({ credential, password }))
+  }
+
   return (
-    <form>
-      <input
-        type="text"
-        value="Demo-lition"
-        onChange={(e) => setCredential(e.target.value)}
-        required
-      />
-      <input
-        type="hidden"
-        value="password"
-        onChange={(e) => setPassword(e.target.value)}
-        required
-      />
-      <button type="submit">Demo User</button>
-    </form>
+    <button type="submit" onClick={handleSubmit}>Demo User</button>
   );
 }
 
