@@ -18,7 +18,7 @@ function App() {
   //check if user is logged in using sessionUser
   return (
     <>
-      {sessionUser ? <SideBar /> :
+      {sessionUser ? <SideBar sessionUser={sessionUser} /> :
         <Navigation isLoaded={isLoaded} />
       }
       {isLoaded && (

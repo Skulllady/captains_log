@@ -2,11 +2,16 @@ import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import ProfileButton from '../SideBar/ProfileButton';
 import './SideBar.css';
 
-function SideBar() {
+function SideBar({ sessionUser }) {
+
   return (
-    <div>SIDEBAR</div>
+    <>
+      <div>SIDEBAR</div>
+      <ProfileButton user={sessionUser} />
+    </>
   )
 }
 
