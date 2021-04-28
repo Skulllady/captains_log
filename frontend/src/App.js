@@ -6,8 +6,8 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import LoginFormPage from './components/LoginFormPage'
 import SideBar from './components/SideBar'
-import AllNotesPage from './components/SideBar/AllNotesPage'
-import CreateNotePage from './components/CreateNotePage'
+import AllNotesPage from './components/AllNotesPage'
+import CreateNotePage from './components/CreateNote'
 import Footer from './components/Footer'
 
 function App() {

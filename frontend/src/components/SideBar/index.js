@@ -3,7 +3,6 @@ import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, NavLink } from 'react-router-dom';
 import ProfileButton from '../SideBar/ProfileButton';
-import AllNotesPage from './AllNotesPage';
 import './SideBar.css';
 import '../../index.css';
 

@@ -13,7 +13,7 @@ function AllNotesPage({ user }) {
   return (
     <>
       <div id="allnotes">
-        <button className="button" onClick="/.">➕ Create Note</button>
+        <button className="button" onClick="/">➕ Create Note</button>
         <li>We will list all the notes here</li>
       </div>
     </>
