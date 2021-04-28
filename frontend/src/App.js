@@ -6,6 +6,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import LoginFormPage from './components/LoginFormPage'
 import SideBar from './components/SideBar'
+import Footer from './components/Footer'
 
 function App() {
   const dispatch = useDispatch();
@@ -31,6 +32,7 @@ function App() {
           </Route>
         </Switch>
       )}
+      <Footer />
     </>
   );
 }
