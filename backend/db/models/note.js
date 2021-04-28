@@ -9,6 +9,14 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Note.associate = function (models) {
     // associations can be defined here
+    const columnMapping = {
+      through: "joinnotewithtag",
+      otherKey: "tagId",
+      foreignKey: "noteId"
+    }
+    Note.belongsToMany(models.JoinNoteWithTag, columnMapping)
+    Note.belongsTo(models.User)
+    Note.belongsTo(models.Notebook)
   };
   return Note;
 };

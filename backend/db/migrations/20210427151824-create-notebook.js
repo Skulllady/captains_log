@@ -9,13 +9,15 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       notebookcover: {
         type: Sequelize.STRING
       },
       userId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: { model: "Users" }
       },
       createdAt: {
         allowNull: false,
