@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     content: DataTypes.TEXT,
     img: DataTypes.STRING,
     userId: DataTypes.INTEGER,
-    notebookid: DataTypes.INTEGER
+    notebookId: DataTypes.INTEGER
   }, {});
   Note.associate = function (models) {
     // associations can be defined here
@@ -15,8 +15,8 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: "noteId"
     }
     Note.belongsToMany(models.JoinNoteWithTag, columnMapping)
-    Note.belongsTo(models.User)
-    Note.belongsTo(models.Notebook)
+    Note.belongsTo(models.User, { foreignKey: 'userId' })
+    Note.belongsTo(models.Notebook, { foreignKey: 'notebookId' })
   };
   return Note;
 };

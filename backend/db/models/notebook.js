@@ -5,8 +5,10 @@ module.exports = (sequelize, DataTypes) => {
     notebookcover: DataTypes.STRING,
     userId: DataTypes.INTEGER
   }, {});
-  Notebook.associate = function(models) {
+  Notebook.associate = function (models) {
     // associations can be defined here
+    Notebook.hasMany(models.Note)
+    Notebook.belongsTo(models.User, { foreignKey: 'userId' })
   };
   return Notebook;
 };

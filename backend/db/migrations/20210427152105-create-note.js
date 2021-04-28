@@ -21,7 +21,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: { model: "Users" }
       },
-      notebookid: {
+      notebookId: {
         type: Sequelize.INTEGER,
         references: { model: "Notebooks" }
       },
