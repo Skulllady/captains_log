@@ -1,0 +1,67 @@
+@media only screen and (min-width: 650px){
+  footer{
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #40516e;
+  }
+  p.optional-footer {
+    display: none;
+}
+
+  .footer a{
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 20px;
+  }
+
+  .footer {
+    color: white;
+    height: 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 20px;
+    background-color: #40516e;
+    opacity: 0.9;
+    padding: 15px;
+  }
+
+  img {
+    height: 20px;
+  }
+}
+
+@media only screen and (max-width: 650px){
+  footer{
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #40516e;
+  }
+
+  .footer a{
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 20px;
+  }
+
+  .footer {
+    color: white;
+    height: 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 10px;
+    background-color: #40516e;
+    opacity: 0.9;
+    padding: 12px;
+  }
+
+
+  img {
+    height: 10px;
+  }
+}

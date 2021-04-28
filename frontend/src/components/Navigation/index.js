@@ -8,18 +8,24 @@ import DemoUser from '../DemoUser'
 function Navigation({ isLoaded }) {
 
 
-    let sessionLinks = (
-      <>
-        <NavLink to="/signup">Sign Up</NavLink>
-        <NavLink to="/login">Log In</NavLink>
-        <DemoUser />
-      </>
-    );
+  let sessionLinks = (
+    <>
+      <NavLink to="/signup">
+        <button className="button">Sign Up</button>
+      </NavLink>
+      <NavLink to="/login">
+        <button className="button">Log In</button>
+      </NavLink>
+      <DemoUser />
+    </>
+  );
 
   return (
     <ul>
       <li>
-        <NavLink exact to="/">Home</NavLink>
+        <NavLink exact to="/">
+          <button className="button">Home</button>
+        </NavLink>
         {isLoaded && sessionLinks}
       </li>
     </ul>

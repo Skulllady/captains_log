@@ -21,7 +21,7 @@ function DemoUser() {
   }
 
   return (
-    <button type="submit" onClick={handleSubmit}>Demo User</button>
+    <button className="button" type="submit" onClick={handleSubmit}>Demo User</button>
   );
 }
 

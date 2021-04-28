@@ -1,20 +1,23 @@
 import './Footer.css';
-import '../../images/github-text-logo.png';
+import githubLogo from '../../images/github-text-logo.png';
+import linkedIn from '../../images/linked-in.png';
 
 function Footer() {
-
   return (
     <>
-      <div className="footer">
-        <p>Follow Trekker and Coder: Lisa Noor</p>
-        <a href="https://https://github.com/Skulllady">
-          <img src={"../../images/github-text-logo.png"} alt="Github" />
-        </a>
-        <a href="https://www.linkedin.com/in/lisa-noor-hoque-976120208/">
-          <img src={"../../images/linked-in.png"} alt="LinkedIn" />
-        </a>
-        <p>Website powered by Javascript, React and Redux</p>
-      </div>
+      <footer>
+        <div className="footer">
+          <p>Follow Trekker and Coder:   Lisa Noor 🖖
+            <a href="https://github.com/Skulllady">
+              <img src={githubLogo} alt="Github" />
+            </a>
+            <a href="https://www.linkedin.com/in/lisa-noor-hoque-976120208/">
+              <img src={linkedIn} alt="LinkedIn" />
+            </a>
+          </p>
+          <p className="optional-footer">Website powered by Javascript, React and Redux</p>
+        </div>
+      </footer>
     </>
   )
 }

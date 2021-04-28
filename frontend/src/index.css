@@ -1,6 +1,7 @@
 /* TODO Add site wide styles */
-.button {
-  background-color: #4CAF50;
+
+button {
+  background-color: #40516e;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -10,4 +11,39 @@
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  border-radius: 15px;
+  box-shadow: 0 5px #666;
+}
+.button:hover {background-color: #607aa7}
+
+.button:active {
+  background-color: #464d5a;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+label{
+  color: white;
+  padding: 15px 32px;
+}
+
+body{
+  background-image: url("images/background-image.jpg");
+  background-color: black;
+  background-size: cover;
+}
+
+#sub-button{
+  background-color: #40516e;
+  border: none;
+  color: white;
+  padding: 7px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 8px;
+  margin: 2px 1px;
+  cursor: pointer;
+  border-radius: 15px;
+  box-shadow: 0 5px #666;
 }
