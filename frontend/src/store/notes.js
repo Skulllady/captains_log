@@ -1,4 +1,4 @@
-
+import { csrfFetch } from "./csrf";
 const ADD_NOTE = "notes/ADD_NOTE"
 
 
@@ -9,13 +9,14 @@ const addOneNote = note => ({
 });
 
 //thunk action creater
-export const createNote = (formData) => async dispatch => {
-  const res = await fetch(`/api/notes`, {
+export const createNote = (noteData) => async dispatch => {
+  console.log("noteData", noteData)
+  const res = await csrfFetch(`/api/notes`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(formData)
+    body: JSON.stringify(noteData)
   });
 
   if (res.ok) {

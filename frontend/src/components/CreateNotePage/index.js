@@ -9,7 +9,13 @@ function CreateNotePage({ user }) {
   const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
   const history = useHistory();
-  const [note, setNote] = useState("");
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [img, setImg] = useState("");
+
+  const updateTitle = (e) => setTitle(e.target.value);
+  const updateContent = (e) => setContent(e.target.value);
+  const updateImg = (e) => setImg(e.target.value);
 
   //if the user is not logged in
   if (!sessionUser) {
@@ -18,31 +24,47 @@ function CreateNotePage({ user }) {
     )
   }
 
-  const updateNote = (event) => {
-    setNote(event.target.value);
-  }
+  // const updateNote = (event) => {
+  //   setTitle(event.target.value);
+  //   setContent(event.target.value);
+  //   setImg(event.target.value);
+  // }
 
   const onSubmitAddNote = async (e) => {
     e.preventDefault();
-    let createdNote = await dispatch(createNote({ note }))
-
+    let createdNote = await dispatch(createNote({ title, content, img }))
+    console.log(createdNote);
     if (createdNote) {
       history.push(`/notes/${createdNote.id}`);
-      setNote('');
+      setTitle('');
+      setContent('');
+      setImg('');
     }
   };
 
   return (
     <div>
       <form onSubmit={onSubmitAddNote}>
+        <input
+          type="text"
+          placeholder="note title"
+          value={title}
+          onChange={updateTitle}
+        ></input>
         <textarea
           placeholder="Add your note"
-          onChange={updateNote}
-          value={note}
+          onChange={updateContent}
+          value={content}
           type="text"
-          name="note"
+          name="content"
         />
-        <NavLink to="/notes/id" >➕ Create Note</NavLink>
+        <input
+          type="text"
+          placeholder="image URL"
+          value={img}
+          onChange={updateImg}
+        ></input>
+        <button type="submit" className="button"> ➕ Create Note</button>
       </form>
     </div>
   );

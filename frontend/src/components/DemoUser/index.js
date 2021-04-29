@@ -15,9 +15,9 @@ function DemoUser() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setCredential("Demo-lition")
-    setPassword("password")
-    return dispatch(sessionActions.login({ credential, password }))
+    // setCredential("Demo-lition")
+    // setPassword("password")
+    return dispatch(sessionActions.login({ credential: "Demo-lition", password: "password" }))
   }
 
   return (
