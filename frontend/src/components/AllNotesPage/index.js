@@ -1,20 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from 'react-redux';
-import * as sessionActions from '../../store/session';
+import { useDispatch, useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import '../../index.css';
 
 function AllNotesPage({ user }) {
-  const dispatch = useDispatch();
-
-  const allNotes = () => {
-
-  }
-
   return (
     <>
-      <div id="allnotes">
-        <button className="button" onClick="/">➕ Create Note</button>
-        <li>We will list all the notes here</li>
+      <div>
+        <NavLink to="/notes/new">➕ Create Note</NavLink>
       </div>
     </>
   );

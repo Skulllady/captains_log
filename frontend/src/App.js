@@ -7,7 +7,7 @@ import Navigation from "./components/Navigation";
 import LoginFormPage from './components/LoginFormPage'
 import SideBar from './components/SideBar'
 import AllNotesPage from './components/AllNotesPage'
-import CreateNotePage from './components/CreateNote'
+import CreateNotePage from './components/CreateNotePage'
 import Footer from './components/Footer'
 
 function App() {
@@ -33,10 +33,10 @@ function App() {
             <LoginFormPage />
           </Route>
           <Route path="/notes">
-            <AllNotesPage />
+            <AllNotesPage user={sessionUser} />
           </Route>
           <Route path="/notes/new">
-            <CreateNotePage />
+            <CreateNotePage user={sessionUser} />
           </Route>
         </Switch>
       )}

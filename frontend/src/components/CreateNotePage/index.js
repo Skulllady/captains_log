@@ -4,9 +4,10 @@ import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
-function CreateNotePage() {
+function CreateNotePage({user}) {
+
   return (
-    <Redirect to="/notes/new" />
+    <p>AM I RENDERING?</p>
   );
 
 }
