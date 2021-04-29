@@ -39,7 +39,7 @@ function App() {
           <Route path="/notes">
             <AllNotesPage user={sessionUser} />
           </Route>
-          <Route path="/notes/new">
+          <Route path="/notes/id">
             <CreateNotePage user={sessionUser} />
           </Route>
         </Switch>

@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { NavLink } from 'react-router-dom';
 import '../../index.css';
+import CreateNotePage from "../CreateNotePage";
 
 function AllNotesPage({ user }) {
   return (
     <>
       <div>
-        <NavLink to="/notes/new">➕ Create Note</NavLink>
+        <CreateNotePage />
       </div>
     </>
   );

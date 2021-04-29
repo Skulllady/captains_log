@@ -1,47 +1,49 @@
 import './CreateNotePage.css';
-import React from 'react';
+import { useEffect, useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect, useHistory } from 'react-router-dom';
+import { Redirect, useHistory, NavLink } from 'react-router-dom';
 import { createNote } from '../../store/notes';
 
 function CreateNotePage({ user }) {
+  const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
   const history = useHistory();
-  const [note, setNote] = React.useState("");
+  const [note, setNote] = useState("");
+
+  //if the user is not logged in
+  if (!sessionUser) {
+    return (
+      <Redirect to="/" />
+    )
+  }
 
   const updateNote = (event) => {
     setNote(event.target.value);
   }
 
-  const onClickAddNote = async (e) => {
+  const onSubmitAddNote = async (e) => {
     e.preventDefault();
-
-    // const payload = {
-    //   note,
-    // };
-
-    let createdNote;
-    createdNote = await dispatch(createNote({ note }))
+    let createdNote = await dispatch(createNote({ note }))
 
     if (createdNote) {
-      history.push(`/Note/${createdNote.id}`);
+      history.push(`/notes/${createdNote.id}`);
       setNote('');
     }
   };
 
   return (
     <div>
-      <textarea
-        placeholder="Add your note"
-        onChange={updateNote}
-        value={note}
-        type="text"
-        name="note"
-      />
-      <button
-        onClick={onClickAddNote}
-      >Add Note To Page</button>
+      <form onSubmit={onSubmitAddNote}>
+        <textarea
+          placeholder="Add your note"
+          onChange={updateNote}
+          value={note}
+          type="text"
+          name="note"
+        />
+        <NavLink to="/notes/id" >➕ Create Note</NavLink>
+      </form>
     </div>
   );
 
