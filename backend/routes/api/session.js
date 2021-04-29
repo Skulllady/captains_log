@@ -25,7 +25,6 @@ router.post(
   validateLogin,
   asyncHandler(async (req, res, next) => {
     const { credential, password } = req.body;
-
     const user = await User.login({ credential, password });
 
     if (!user) {
@@ -35,6 +34,9 @@ router.post(
       err.errors = ['The provided credentials were invalid.'];
       return next(err);
     }
+    // req.session.auth = {
+    //   userId: user.id
+    // }
 
     await setTokenCookie(res, user);
 

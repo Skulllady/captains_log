@@ -3,17 +3,20 @@ const asyncHandler = require("express-async-handler");
 const { check, validationResult } = require("express-validator");
 const router = express.Router();
 const { content } = require('../../db/models/note')
+const { requireAuth } = require("../../utils/auth")
+
 
 const NotesRepository = require("../../db/notes-repository")
 
-router.get('/notes', asyncHandler(async function (req, res) {
-  const userId = req.body.userId;
-  const listAllNotes = await NotesRepository.notesByUserId(userId)
+router.get('/', requireAuth, asyncHandler(async function (req, res) {
+  const userId = req.user.id;
+  const listAllNotes = await NotesRepository.notesByUserId(userId);
   return res.json(listAllNotes);
 }))
 
-router.post('/notes/new', asyncHandler(async function (req, res) {
-  const note = await NotesRepository.addNote(req.body, req.params.id);
+router.post('/new', requireAuth, asyncHandler(async function (req, res) {
+  const userId = req.user.id;
+  const note = await NotesRepository.addNote(req.body, userId);
   return res.json(note);
 }))
 

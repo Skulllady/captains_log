@@ -1,5 +1,6 @@
 const { Note } = require("./models");
 
+
 async function notesByUserId(userId) {
   return await Note.findAll({
     where: {
@@ -8,12 +9,12 @@ async function notesByUserId(userId) {
   })
 }
 
-async function addNote(noteDetails, id) {
+async function addNote(noteDetails, userId) {
   const note = await Note.create({
     ...noteDetails,
-    id
+    userId
   })
-  return await Note.findByPk(note.id)
+  return note;
 }
 
 module.exports = {

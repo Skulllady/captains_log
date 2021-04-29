@@ -12,11 +12,15 @@ import Footer from './components/Footer'
 
 function App() {
   const dispatch = useDispatch();
-  const sessionUser = useSelector(state => state.session.user)
   const [isLoaded, setIsLoaded] = useState(false);
+
+  const sessionUser = useSelector(state => state.session.user)
+  const notes = useSelector((state) => state.notes)
+
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
+
 
   //check if user is logged in using sessionUser
   return (

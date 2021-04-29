@@ -1,13 +1,48 @@
 import './CreateNotePage.css';
-import React, { useState } from 'react';
+import React from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
+import { createNote } from '../../store/notes';
 
-function CreateNotePage({user}) {
+function CreateNotePage({ user }) {
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const [note, setNote] = React.useState("");
+
+  const updateNote = (event) => {
+    setNote(event.target.value);
+  }
+
+  const onClickAddNote = async (e) => {
+    e.preventDefault();
+
+    // const payload = {
+    //   note,
+    // };
+
+    let createdNote;
+    createdNote = await dispatch(createNote({ note }))
+
+    if (createdNote) {
+      history.push(`/Note/${createdNote.id}`);
+      setNote('');
+    }
+  };
 
   return (
-    <p>AM I RENDERING?</p>
+    <div>
+      <textarea
+        placeholder="Add your note"
+        onChange={updateNote}
+        value={note}
+        type="text"
+        name="note"
+      />
+      <button
+        onClick={onClickAddNote}
+      >Add Note To Page</button>
+    </div>
   );
 
 }
