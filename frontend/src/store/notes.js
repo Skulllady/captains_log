@@ -26,28 +26,26 @@ export const createNote = (noteData) => async dispatch => {
   }
 }
 
-const initialState = { note: [] }
+const initialState = { noteslist: [] }
 
 export default function notesReducer(state = initialState, action) {
   switch (action.type) {
     case ADD_NOTE: {
       //if state at that id does not exit, set newState
-      if (!state[action.notes.id]) {
+      if (!state[action.note.id]) {
         const newState = {
           ...state,
-          [action.notes.id]: action.notes
+          [action.note.id]: action.note
         };
-        const noteList = newState.list.map(id => newState[id]);
-        noteList.push(action.notes);
+        const noteList = newState.noteslist.map(id => newState[id]);
+        noteList.push(action.note);
         return newState;
       }
-      else {
-        return {
-          ...state,
-          [action.notes.id]: {
-            ...state[action.notes.id],
-            ...action.notes,
-          }
+      return {
+        ...state,
+        [action.note.id]: {
+          ...state[action.note.id],
+          ...action.note,
         }
       }
     }
