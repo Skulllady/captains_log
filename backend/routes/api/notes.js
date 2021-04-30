@@ -22,7 +22,9 @@ router.post('/', requireAuth, asyncHandler(async function (req, res) {
 
 router.get('/search', requireAuth, asyncHandler(async function (req, res) {
   const userId = req.user.id;
-  const listAllNotes = await NotesRepository.notesByUserId(userId);
+  console.log(req.params)
+  const query = req.query.query;
+  const listAllNotes = await NotesRepository.searchNotesByUserId(query, userId);
   return res.json(listAllNotes);
 }))
 

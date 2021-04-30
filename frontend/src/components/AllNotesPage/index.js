@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { getNotes } from "../../store/notes.js";
 import '../../index.css';
+import './AllNotesPage.css';
 
 function AllNotesPage({ user }) {
   const dispatch = useDispatch();

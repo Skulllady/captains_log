@@ -6,7 +6,6 @@ import { Redirect, useHistory, NavLink } from 'react-router-dom';
 import { createNote } from '../../store/notes';
 
 function CreateNotePage({ user }) {
-  // const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
   const history = useHistory();
   const [title, setTitle] = useState("");
@@ -52,11 +51,10 @@ function CreateNotePage({ user }) {
           onChange={updateTitle}
         ></input>
         <textarea
-          placeholder="Add your note"
-          onChange={updateContent}
-          value={content}
           type="text"
-          name="content"
+          placeholder="note title"
+          value={content}
+          onChange={updateContent}
         />
         <input
           type="text"
@@ -64,7 +62,7 @@ function CreateNotePage({ user }) {
           value={img}
           onChange={updateImg}
         ></input>
-        <button type="submit" className="button"> ➕ Create Note</button>
+        <button type="submit" className="button"> Save Note</button>
       </form>
     </div>
   );

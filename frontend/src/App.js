@@ -8,6 +8,7 @@ import LoginFormPage from './components/LoginFormPage'
 import SideBar from './components/SideBar'
 import AllNotesPage from './components/AllNotesPage'
 import CreateNotePage from './components/CreateNotePage'
+import Search from './components/Search'
 import Footer from './components/Footer'
 
 function App() {
@@ -38,6 +39,9 @@ function App() {
           </Route>
           <Route path="/notes/new">
             <CreateNotePage user={sessionUser} />
+          </Route>
+          <Route path="/notes/search">
+            <Search user={sessionUser} />
           </Route>
           <Route path="/notes">
             <AllNotesPage user={sessionUser} />

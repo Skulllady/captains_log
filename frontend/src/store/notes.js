@@ -1,6 +1,7 @@
 import { csrfFetch } from "./csrf";
 const ADD_NOTE = "notes/ADD_NOTE"
 const LOAD_NOTES = 'notes/LOAD_NOTES';
+const SEARCHED_NOTES = 'notes/SEARCHED_NOTES';
 
 
 //action creator
@@ -12,6 +13,11 @@ const addOneNote = note => ({
 const loadNotes = notes => ({
   type: LOAD_NOTES,
   notes,
+});
+
+const searchedNotes = notes => ({
+  type: SEARCHED_NOTES,
+  notes
 });
 
 //thunk action creater
@@ -40,7 +46,16 @@ export const getNotes = () => async dispatch => {
   }
 }
 
-const initialState = { notesList: [] }
+export const findNotes = (query) => async dispatch => {
+  //encode the query and pass query in a "query string" ?query=
+  const response = await csrfFetch(`/api/notes/search?query=${encodeURIComponent(query)}`);
+  if (response.ok) {
+    const list = await response.json();
+    dispatch(searchedNotes(list));
+  }
+}
+
+const initialState = { notesList: [], searchList: [] }
 
 export default function notesReducer(state = initialState, action) {
   switch (action.type) {
@@ -73,6 +88,12 @@ export default function notesReducer(state = initialState, action) {
         ...state,
         notesList: action.notes
       };
+    }
+    case SEARCHED_NOTES: {
+      return {
+        ...state,
+        searchList: action.notes
+      }
     }
     default:
       return state;
