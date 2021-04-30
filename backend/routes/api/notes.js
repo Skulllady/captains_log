@@ -16,7 +16,6 @@ router.get('/', requireAuth, asyncHandler(async function (req, res) {
 
 router.post('/', requireAuth, asyncHandler(async function (req, res) {
   const userId = req.user.id;
-  console.log("req.BODY", req.body)
   const note = await NotesRepository.addNote(req.body, userId);
   return res.json(note);
 }))

@@ -1,11 +1,17 @@
 import { csrfFetch } from "./csrf";
 const ADD_NOTE = "notes/ADD_NOTE"
+const LOAD_NOTES = 'notes/LOAD_NOTES';
 
 
 //action creator
 const addOneNote = note => ({
   type: ADD_NOTE,
   note,
+});
+
+const loadNotes = notes => ({
+  type: LOAD_NOTES,
+  notes,
 });
 
 //thunk action creater
@@ -26,19 +32,27 @@ export const createNote = (noteData) => async dispatch => {
   }
 }
 
-const initialState = { noteslist: [] }
+export const getNotes = () => async dispatch => {
+  const response = await csrfFetch(`/api/notes`);
+  if (response.ok) {
+    const list = await response.json();
+    dispatch(loadNotes(list));
+  }
+}
+
+const initialState = { notesList: [] }
 
 export default function notesReducer(state = initialState, action) {
   switch (action.type) {
     case ADD_NOTE: {
       //if state at that id does not exit, set newState
       if (!state[action.note.id]) {
+        const notesList = [...state.notesList, action.note];
         const newState = {
           ...state,
+          notesList,
           [action.note.id]: action.note
         };
-        const noteList = newState.noteslist.map(id => newState[id]);
-        noteList.push(action.note);
         return newState;
       }
       return {
@@ -48,6 +62,17 @@ export default function notesReducer(state = initialState, action) {
           ...action.note,
         }
       }
+    }
+    case LOAD_NOTES: {
+      const allNotes = {};
+      action.notes.forEach(note => {
+        allNotes[note.id] = note;
+      });
+      return {
+        ...allNotes,
+        ...state,
+        notesList: action.notes
+      };
     }
     default:
       return state;
