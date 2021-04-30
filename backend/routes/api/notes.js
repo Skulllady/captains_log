@@ -20,4 +20,10 @@ router.post('/', requireAuth, asyncHandler(async function (req, res) {
   return res.json(note);
 }))
 
+router.get('/search', requireAuth, asyncHandler(async function (req, res) {
+  const userId = req.user.id;
+  const listAllNotes = await NotesRepository.notesByUserId(userId);
+  return res.json(listAllNotes);
+}))
+
 module.exports = router;
