@@ -15,7 +15,7 @@ function SideBar({ sessionUser }) {
       <div className="sidebar">SIDEBAR</div>
       <ProfileButton user={sessionUser} />
       <NavLink to="/notes">All Notes</NavLink>
-      <CreateNotePage />
+      <NavLink to="/notes/new">Create Note</NavLink>
     </>
   )
 }

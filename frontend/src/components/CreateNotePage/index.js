@@ -6,7 +6,7 @@ import { Redirect, useHistory, NavLink } from 'react-router-dom';
 import { createNote } from '../../store/notes';
 
 function CreateNotePage({ user }) {
-  const sessionUser = useSelector(state => state.session.user);
+  // const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
   const history = useHistory();
   const [title, setTitle] = useState("");
@@ -18,9 +18,9 @@ function CreateNotePage({ user }) {
   const updateImg = (e) => setImg(e.target.value);
 
   //if the user is not logged in
-  if (!sessionUser) {
+  if (!user) {
     return (
-      <Redirect to="/" />
+      <Redirect to="/login" />
     )
   }
 

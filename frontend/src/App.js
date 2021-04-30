@@ -36,11 +36,11 @@ function App() {
           <Route path="/login">
             <LoginFormPage />
           </Route>
-          <Route path="/notes">
-            <AllNotesPage user={sessionUser} />
-          </Route>
           <Route path="/notes/new">
             <CreateNotePage user={sessionUser} />
+          </Route>
+          <Route path="/notes">
+            <AllNotesPage user={sessionUser} />
           </Route>
         </Switch>
       )}
