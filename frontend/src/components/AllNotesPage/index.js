@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getNotes } from "../../store/notes.js";
 import '../../index.css';
 import './AllNotesPage.css';
+import ReactHtmlParser from 'react-html-parser';
+
 
 function AllNotesPage({ user }) {
   const dispatch = useDispatch();
@@ -23,9 +25,10 @@ function AllNotesPage({ user }) {
           console.log(eachNote)
           return (
             <>
-              <hr></hr>
+              <hr />
               <h3><b>{eachNote.title}</b></h3>
-              <p>{eachNote.content}</p>
+              <p>{ReactHtmlParser(eachNote.content)}</p>
+              <img src={eachNote.img} width="100px" height="100px" />
             </>
           )
         })}

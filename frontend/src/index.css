@@ -37,7 +37,8 @@ body{
 p{
   font-family: 'Charm', cursive;
   font-size: 20px;
-  background-color: #40516e;
+  background-color: #0c121d;
+  color: rgb(224, 212, 212);
 }
 
 #sub-button{

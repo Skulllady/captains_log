@@ -31,6 +31,8 @@
     "pg": "^8.6.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-html-parser": "^2.0.2",
+    "react-rte": "^0.16.3",
     "sequelize": "^5.22.4",
     "sequelize-cli": "^5.5.1"
   },
