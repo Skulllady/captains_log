@@ -1,0 +1,9 @@
+#root{
+display: grid;
+}
+
+ul.all-notes {
+display: flex;
+flex-direction: column;
+
+}

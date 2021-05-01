@@ -18,13 +18,14 @@ function AllNotesPage({ user }) {
   return (
     <>
       <div>
-        <ul> NOTES
+        <ul className="all-notes"> ALL YOUR NOTES
           {notesList && notesList.map((eachNote) => {
           console.log(eachNote)
           return (
             <>
-              <li>{eachNote.title}</li>
-              <li>{eachNote.content}</li>
+              <hr></hr>
+              <h3><b>{eachNote.title}</b></h3>
+              <p>{eachNote.content}</p>
             </>
           )
         })}

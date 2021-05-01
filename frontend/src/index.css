@@ -23,7 +23,7 @@ button {
 }
 
 label{
-  color: white;
+  color: rgb(224, 212, 212);
   padding: 15px 32px;
 }
 
@@ -31,7 +31,13 @@ body{
   background-image: url("images/background-image.jpg");
   background-color: black;
   background-size: cover;
-  color: white;
+  color: rgb(224, 212, 212);
+}
+
+p{
+  font-family: 'Charm', cursive;
+  font-size: 20px;
+  background-color: #40516e;
 }
 
 #sub-button{
