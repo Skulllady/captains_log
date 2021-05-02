@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import './Navigation.css';
 import DemoUser from '../DemoUser'
 import logo from "../../images/cllogo-white.png";
+import theEnterprise from "../../images/enterprise.png";
 
 function Navigation({ isLoaded }) {
 
@@ -33,7 +34,7 @@ function Navigation({ isLoaded }) {
         </div>
       </div>
       <div className="LOpage">
-
+        <img src={theEnterprise} alt="The Enterprise" width="400px"></img>
       </div>
     </>
   );
