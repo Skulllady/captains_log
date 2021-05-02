@@ -1,30 +1,9 @@
 /* TODO Add site wide styles */
 
-button {
-  background-color: #40516e;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 15px;
-  box-shadow: 0 5px #666;
-}
-.button:hover {background-color: #607aa7}
-
-.button:active {
-  background-color: #464d5a;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-
 label{
   color: rgb(224, 212, 212);
   padding: 15px 32px;
+  font-family: monospace;
 }
 
 body{
@@ -34,12 +13,74 @@ body{
   color: rgb(224, 212, 212);
 }
 
-p{
-  font-family: 'Charm', cursive;
+.button{
+  position: relative;
+  right: 20px;
+  bottom: 20px;
+  border:none;
+  width: 150px;
+  height: 60px;
+  line-height: 60px;
+  -webkit-perspective: 230px;
+  perspective: 230px;
+  color:#e0e5ec;
+  background-color: transparent;
+  font-family: monospace;
+}
+.button span {
+  display: block;
+  position: absolute;
+  width: 130px;
+  height: 60px;
+  border: 2px solid rgb(39, 35, 35);
+  margin:0;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+.button span:nth-child(1) {
+  box-shadow:
+   -7px -7px 20px 0px rgba(98, 98, 98, 0.6),
+   -4px -4px 5px 0px rgba(88, 88, 88, 0.6),
+   7px 7px 20px 0px #0002,
+   4px 4px 5px 0px #0001;
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -moz-transform-origin: 50% 50% -20px;
+  transform-origin: 50% 50% -20px;
+}
+.button span:nth-child(2) {
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -moz-transform-origin: 50% 50% -20px;
+  transform-origin: 50% 50% -20px;
+}
+.button:hover span:nth-child(1) {
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+}
+.button:hover span:nth-child(2) {
+  background: #e0e5ec;
+  color: #e0e5ec;
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+}
+
+footer p{
+  font-family:monospace;
   font-size: 20px;
-  background-color: #0c121d;
   color: rgb(224, 212, 212);
 }
+
 
 #sub-button{
   background-color: #40516e;

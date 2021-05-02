@@ -21,7 +21,7 @@ function DemoUser() {
   }
 
   return (
-    <button className="button" type="submit" onClick={handleSubmit}>Demo User</button>
+    <button className="custom-btn button" type="submit" onClick={handleSubmit}><span>Log In as a Demo User</span><span>Demo User</span></button>
   );
 }
 

@@ -49,7 +49,7 @@ function LoginFormPage() {
           required
         />
       </label>
-      <button type="submit" className="button">Log In</button>
+      <button type="submit" className="custom-btn button"><span>Welcome Back!</span><span>Log In</span></button>
     </form>
   );
 }

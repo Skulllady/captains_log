@@ -1,0 +1,10 @@
+.header{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+
+.logo-nav{
+  padding-top: 10px;
+  padding-left: 25px;
+}

@@ -86,7 +86,7 @@ function CreateNotePage({ user }) {
           value={img}
           onChange={updateImg}
         ></input>
-        <button type="submit" className="button"> Save Note</button>
+        <button type="submit" className="custom-btn button"><span>Save Me!</span><span>Save Note</span></button>
       </form>
     </div>
   );
