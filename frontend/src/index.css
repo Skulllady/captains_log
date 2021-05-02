@@ -19,19 +19,19 @@ body{
   bottom: 20px;
   border:none;
   width: 150px;
-  height: 60px;
-  line-height: 60px;
+  height: 40px;
+  line-height: 40px;
   -webkit-perspective: 230px;
   perspective: 230px;
   color:#e0e5ec;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.3);
   font-family: monospace;
 }
 .button span {
   display: block;
   position: absolute;
-  width: 130px;
-  height: 60px;
+  width: 145px;
+  height: 40px;
   border: 2px solid rgb(39, 35, 35);
   margin:0;
   text-align: center;
@@ -42,11 +42,6 @@ body{
   transition: all .3s;
 }
 .button span:nth-child(1) {
-  box-shadow:
-   -7px -7px 20px 0px rgba(98, 98, 98, 0.6),
-   -4px -4px 5px 0px rgba(88, 88, 88, 0.6),
-   7px 7px 20px 0px #0002,
-   4px 4px 5px 0px #0001;
   -webkit-transform: rotateX(90deg);
   -moz-transform: rotateX(90deg);
   transform: rotateX(90deg);
@@ -79,20 +74,4 @@ footer p{
   font-family:monospace;
   font-size: 20px;
   color: rgb(224, 212, 212);
-}
-
-
-#sub-button{
-  background-color: #40516e;
-  border: none;
-  color: white;
-  padding: 7px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: block;
-  font-size: 8px;
-  margin: 2px 1px;
-  cursor: pointer;
-  border-radius: 15px;
-  box-shadow: 0 5px #666;
 }
