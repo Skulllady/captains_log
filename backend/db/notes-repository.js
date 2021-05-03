@@ -6,13 +6,14 @@ async function notesByUserId(userId) {
   return await Note.findAll({
     where: {
       userId
-    }
+    },
+    order: [['updatedAt', 'DESC']]
   })
 }
 
-async function addNote(noteDetails, userId) {
+async function addNote(noteData, userId) {
   return await Note.create({
-    ...noteDetails,
+    ...noteData,
     userId
   })
 }
@@ -30,8 +31,27 @@ async function searchNotesByUserId(inputQuery, userId) {
   );
 }
 
+async function findNote(noteId, userId) {
+  return await Note.findOne({
+    where: {
+      id: noteId,
+      userId
+    }
+  })
+}
+
+async function editNote(note, noteData) {
+  note.title = noteData.title
+  note.content = noteData.content
+  note.img = noteData.img
+  note.notebookId = noteData.notebookId
+  return await note.save()
+}
+
 module.exports = {
   notesByUserId,
   addNote,
-  searchNotesByUserId
+  searchNotesByUserId,
+  findNote,
+  editNote
 }
