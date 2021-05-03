@@ -38,6 +38,21 @@ export const createNote = (noteData) => async dispatch => {
   }
 }
 
+export const editNote = (payload) => async dispatch => {
+  const res = await csrfFetch(`/api/notes/id`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  })
+  if (res.ok) {
+    const editedNote = await res.json();
+    dispatch(addOneNote(editedNote))
+    return editedNote;
+  }
+}
+
 export const getNotes = () => async dispatch => {
   const response = await csrfFetch(`/api/notes`);
   if (response.ok) {

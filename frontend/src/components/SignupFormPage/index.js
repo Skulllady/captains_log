@@ -4,7 +4,6 @@ import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
 import '../../index.css';
-import logo from "../../images/logo.png";
 
 function SignupFormPage() {
   const dispatch = useDispatch();
@@ -32,7 +31,6 @@ function SignupFormPage() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <img src={logo} alt="CAPTAIN'S LOG"></img>
       <h1>Sign Up</h1>
       <ul>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}

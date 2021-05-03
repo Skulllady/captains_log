@@ -7,7 +7,7 @@ function Footer() {
     <>
       <footer>
         <div className="footer">
-          <p>Follow Trekker and Coder:   Lisa Noor 🖖
+          <p> 🖖 Track trekker, Lisa Noor, on:
             <a href="https://github.com/Skulllady">
               <img src={githubLogo} alt="Github" />
             </a>
@@ -15,7 +15,6 @@ function Footer() {
               <img src={linkedIn} alt="LinkedIn" />
             </a>
           </p>
-          <p className="optional-footer">Website powered by Javascript, React and Redux</p>
         </div>
       </footer>
     </>

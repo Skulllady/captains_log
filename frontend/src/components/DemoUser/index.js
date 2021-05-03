@@ -21,7 +21,7 @@ function DemoUser() {
   }
 
   return (
-    <button className="custom-btn button" type="submit" onClick={handleSubmit}><span>Login Demo Mode</span><span>Demo User</span></button>
+    <button className="custom-btn button" id="demo-user" type="submit" onClick={handleSubmit}><span>Login Demo Mode</span><span>Demo User</span></button>
   );
 }
 

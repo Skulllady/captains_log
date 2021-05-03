@@ -26,6 +26,7 @@ body{
   color:#e0e5ec;
   background-color: rgba(0, 0, 0, 0.3);
   font-family: monospace;
+  font-size: 16px;
 }
 .button span {
   display: block;
@@ -72,6 +73,6 @@ body{
 
 footer p{
   font-family:monospace;
-  font-size: 20px;
+  font-size: 18px;
   color: rgb(224, 212, 212);
 }

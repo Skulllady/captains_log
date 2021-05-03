@@ -33,8 +33,17 @@ function Navigation({ isLoaded }) {
           {isLoaded && sessionLinks}
         </div>
       </div>
-      <div className="LOpage">
-        <img src={theEnterprise} alt="The Enterprise" width="400px"></img>
+      <div className="splash-container">
+        <div className="enterprise-container">
+          <img src={theEnterprise} alt="The Enterprise"></img>
+        </div>
+        <div className="splash-content">
+          <h1>Log it like Picard</h1>
+          <p>Journaling helps us stay conscious of our internal dialogues.</p>
+          <p>Captain's Log is a great tool to practice this because each new journal will have a few starter questions to help you get started!</p>
+          <p>Give it a whirl as a demo user:</p>
+          <DemoUser />
+        </div>
       </div>
     </>
   );

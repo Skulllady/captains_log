@@ -8,3 +8,43 @@ justify-content: space-between;
   padding-top: 10px;
   padding-left: 25px;
 }
+
+.splash-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  /* vertical centering */
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.splash-content{
+  max-width: 30%;
+}
+.splash-container h1{
+  font-size: 40px;
+}
+.splash-container p{
+  font-size: 18px;
+}
+
+.splash-container{
+  font-family: monospace;
+}
+
+.splash-container img{
+  width: 500px;
+  animation: upDown 1.5s alternate infinite ease-in-out;
+}
+
+#demo-user{
+  color: rgb(20, 167, 167);
+  font-weight:bold;
+}
+
+
+@keyframes upDown {
+  to { transform: translatey(20px);}
+}
