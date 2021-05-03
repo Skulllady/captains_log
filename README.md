@@ -2,4 +2,4 @@
 
 # live-long-and-prosper
 
-Live Site Link: https://captainslog-2323.herokuapp.com/notes
+Live Site Link: https://captainslog-2323.herokuapp.com/
