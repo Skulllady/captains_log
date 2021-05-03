@@ -10,7 +10,7 @@ function Navigation({ isLoaded }) {
   let sessionLinks = (
     <>
       <NavLink to="/signup">
-        <button className="custom-btn button"><span>Join Captain's Log</span><span>Sign Up</span></button>
+        <button className="custom-btn button"><span>Welcome Aboard!</span><span>Sign Up</span></button>
       </NavLink>
       <NavLink to="/login">
         <button className="custom-btn button"><span>Welcome Back!</span><span>Log In</span></button>

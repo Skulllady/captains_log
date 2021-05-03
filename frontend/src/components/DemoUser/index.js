@@ -10,7 +10,7 @@ function DemoUser() {
   const dispatch = useDispatch();
 
   if (sessionUser) return (
-    <Redirect to="/" />
+    <Redirect to="/notes" />
   );
 
   const handleSubmit = (e) => {

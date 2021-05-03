@@ -45,7 +45,7 @@ function CreateNotePage({ user }) {
   //if the user is not logged in
   if (!user) {
     return (
-      <Redirect to="/login" />
+      <Redirect to="/" />
     )
   }
 
@@ -66,11 +66,6 @@ function CreateNotePage({ user }) {
     }
   };
 
-  const handleCancelClick = (e) => {
-    e.preventDefault();
-  };
-
-
   return (
     <div>
       <form onSubmit={onSubmitAddNote}>
@@ -84,6 +79,7 @@ function CreateNotePage({ user }) {
           toolbarConfig={toolbarConfig}
           value={value}
           onChange={setValue}
+          className="RichTextEditor"
         />
         <input
           type="text"
@@ -91,9 +87,7 @@ function CreateNotePage({ user }) {
           value={img}
           onChange={updateImg}
         ></input>
-        <button type="submit" className="custom-btn button"><span>Save Me!</span><span>Save Note</span></button>
-        <button className="custom-btn button" onClick={handleCancelClick}><span>Back</span><span>Cancel</span></button>
-      </form>
+        <button type="submit" className="custom-btn button"><span>Save Me!</span><span>Save Note</span></button>      </form>
     </div>
   );
 

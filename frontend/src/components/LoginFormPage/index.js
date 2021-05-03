@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import './LoginForm.css';
+import './LoginFormPage.css';
 import '../../index.css';
+import SplashContainer from '../SplashContainer';
 
 function LoginFormPage() {
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ function LoginFormPage() {
   const [errors, setErrors] = useState([]);
 
   if (sessionUser) return (
-    <Redirect to="/" />
+    <Redirect to="/notes" />
   );
 
   const handleSubmit = (e) => {
@@ -27,30 +28,33 @@ function LoginFormPage() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <SplashContainer>
+      <h1>Log In</h1>
       <ul>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>
-      <label>
-        Username or Email
+      <form onSubmit={handleSubmit} className="auth-form">
+        <label>
+          Username or Email
         <input
-          type="text"
-          value={credential}
-          onChange={(e) => setCredential(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Password
+            type="text"
+            value={credential}
+            onChange={(e) => setCredential(e.target.value)}
+            required
+          />
+        </label>
+        <label>
+          Password
         <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </label>
-      <button type="submit" className="custom-btn button"><span>Welcome Back!</span><span>Log In</span></button>
-    </form>
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </label>
+        <button type="submit" className="custom-btn button"><span>Welcome Back!</span><span>Log In</span></button>
+      </form>
+    </SplashContainer >
   );
 }
 

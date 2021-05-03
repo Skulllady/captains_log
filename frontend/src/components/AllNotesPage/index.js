@@ -5,7 +5,7 @@ import '../../index.css';
 import './AllNotesPage.css';
 import ReactHtmlParser from 'react-html-parser';
 import EditNoteFormPage from "../EditNoteFormPage"
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 
 
 function AllNotesPage({ user }) {
@@ -15,6 +15,12 @@ function AllNotesPage({ user }) {
   useEffect(() => {
     dispatch(getNotes())
   }, [dispatch])
+
+  if (!user) {
+    return (
+      <Redirect to="/" />
+    )
+  }
 
   return (
     <>

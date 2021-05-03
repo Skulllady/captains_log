@@ -2,7 +2,7 @@
 
 label{
   color: rgb(224, 212, 212);
-  padding: 15px 32px;
+  padding-top: 10px;
   font-family: monospace;
 }
 
@@ -14,9 +14,6 @@ body{
 }
 
 .button{
-  position: relative;
-  right: 20px;
-  bottom: 20px;
   border:none;
   width: 185px;
   height: 40px;
@@ -27,6 +24,7 @@ body{
   background-color: rgba(0, 0, 0, 0.3);
   font-family: monospace;
   font-size: 16px;
+  padding: 0;
 }
 .button span {
   display: block;

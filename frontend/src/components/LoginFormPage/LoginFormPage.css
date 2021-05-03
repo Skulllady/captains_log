@@ -1,0 +1,19 @@
+.auth-form{
+display: flex;
+flex-direction: column;
+align-items: left;
+font-size: 20px;
+}
+
+.auth-form input{
+  float :right;
+  margin-left: 25px;
+  height: 15px;
+  padding: 10px;
+  width: 200px;
+
+}
+
+.auth-form label{
+  line-height: 1.7;
+}

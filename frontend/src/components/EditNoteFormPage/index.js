@@ -21,7 +21,7 @@ function EditNoteFormPage({ user }) {
   //if the user is not logged in
   if (!user) {
     return (
-      <Redirect to="/login" />
+      <Redirect to="/" />
     )
   }
 
@@ -32,11 +32,6 @@ function EditNoteFormPage({ user }) {
       history.push(`/notes`)
     }
   }
-
-  const handleCancelClick = (e) => {
-    e.preventDefault();
-  };
-
 
   return (
     <>
@@ -58,9 +53,7 @@ function EditNoteFormPage({ user }) {
           value={img}
           onChange={updateImg}
         />
-        <button type="submit" className="custom-btn button"><span>Save Me!</span><span>Save Note</span></button>
-        <button className="custom-btn button" onClick={handleCancelClick}><span>Back</span><span>Cancel</span></button>
-      </form>
+        <button type="submit" className="custom-btn button"><span>Save Me!</span><span>Save Note</span></button>      </form>
     </>
   )
 

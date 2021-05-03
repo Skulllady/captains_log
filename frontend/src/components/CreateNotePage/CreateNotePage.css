@@ -1,0 +1,5 @@
+.RichTextEditor{
+  /* invert editor colours to match dark theme */
+  filter: invert(1);
+  color: rgb(0, 0, 0);
+}

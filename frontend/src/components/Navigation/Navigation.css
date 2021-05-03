@@ -4,14 +4,15 @@ flex-direction: row;
 justify-content: space-between;
 }
 
+
+.login-signup-demo-nav{
+  padding-right: 50PX;
+}
 .login-signup-demo-nav .button{
   margin-left: 15px;
 }
 
 .logo-nav{
-  padding-top: 10px;
-  padding-left: 25px;
+  padding-top: 25px;
+  padding-left: 50px;
 }
-
-
-
