@@ -16,7 +16,7 @@
 - POSTGRES Full Text Search https://www.postgresql.org/docs/9.5/textsearch.html
 
 ### Welcome Aboard
-![Welcome Page View - PLACEHOLDER](public/src/images/captain'slog.gif)
+![Welcome Page View - PLACEHOLDER](frontend/public/src/images/captain'slog.gif)
 
 # live-long-and-prosper
 
