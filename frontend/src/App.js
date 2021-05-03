@@ -9,6 +9,7 @@ import SideBar from './components/SideBar'
 import AllNotesPage from './components/AllNotesPage'
 import CreateNotePage from './components/CreateNotePage'
 import EditNoteFormPage from './components/EditNoteFormPage'
+import HomePage from './components/HomePage'
 import Search from './components/Search'
 import Footer from './components/Footer'
 
@@ -49,6 +50,9 @@ function App() {
           </Route>
           <Route path="/notes">
             <AllNotesPage user={sessionUser} />
+          </Route>
+          <Route path="/">
+            <HomePage />
           </Route>
         </Switch>
       )}

@@ -18,7 +18,7 @@ body{
   right: 20px;
   bottom: 20px;
   border:none;
-  width: 150px;
+  width: 185px;
   height: 40px;
   line-height: 40px;
   -webkit-perspective: 230px;
@@ -31,7 +31,7 @@ body{
 .button span {
   display: block;
   position: absolute;
-  width: 145px;
+  width: 185px;
   height: 40px;
   border: 2px solid rgb(39, 35, 35);
   margin:0;

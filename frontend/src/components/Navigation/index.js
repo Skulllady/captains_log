@@ -1,13 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import './Navigation.css';
 import DemoUser from '../DemoUser'
 import logo from "../../images/cllogo-white.png";
-import theEnterprise from "../../images/enterprise.png";
+import HomePage from '../HomePage';
 
 function Navigation({ isLoaded }) {
-
 
   let sessionLinks = (
     <>
@@ -31,18 +29,6 @@ function Navigation({ isLoaded }) {
         </div>
         <div className="login-signup-demo-nav">
           {isLoaded && sessionLinks}
-        </div>
-      </div>
-      <div className="splash-container">
-        <div className="enterprise-container">
-          <img src={theEnterprise} alt="The Enterprise"></img>
-        </div>
-        <div className="splash-content">
-          <h1>Log it like Picard</h1>
-          <p>Journaling helps us stay conscious of our internal dialogues.</p>
-          <p>Captain's Log is a great tool to practice this because each new journal will have a few starter questions to help you get started!</p>
-          <p>Give it a whirl as a demo user:</p>
-          <DemoUser />
         </div>
       </div>
     </>
