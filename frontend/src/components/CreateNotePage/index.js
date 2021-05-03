@@ -96,6 +96,15 @@ function CreateNotePage({ user }) {
           className="RichTextEditor"
         />
         <button type="submit" className="custom-btn button"><span>Make It So!</span><span>Save Note</span></button>      </form>
+      <div className="Suggestions">
+        <h2>Suggestions To Get Started</h2>
+        <li>What one thing did I do best this week and how did I do it?</li>
+        <li>What one thing did I do worst this week and what led me to do it?</li>
+        <li>What specifically will I do next week to continue doing what I did best?</li>
+        <li>What specifically will I do next week to improve what I did worst?</li>
+        <li>How well did I achieve my "continue my best" goal last week and what do I need to do this week to continue and/or improve upon that progress?</li>
+        <li>How well did I achieve my "improve my worst" goal last week and what do I need to do this week to continue and/or improve upon that progress?</li>
+      </div>
     </div>
   );
 
