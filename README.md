@@ -1,4 +1,4 @@
-# Welcome Aboard to Captain's Log! 
+# Welcome Aboard to Captain's Log!
 
 ### **Live Link: [Captain's Log](https://captainslog-2323.herokuapp.com/)**
 
@@ -14,6 +14,9 @@
 - Heroku
 - React-RTE https://github.com/sstur/react-rte
 - POSTGRES Full Text Search https://www.postgresql.org/docs/9.5/textsearch.html
+
+### Welcome Aboard
+![Welcome Page View - PLACEHOLDER](captain'slog.gif)
 
 # live-long-and-prosper
 
