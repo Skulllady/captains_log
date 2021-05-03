@@ -15,6 +15,9 @@
 - React-RTE https://github.com/sstur/react-rte
 - POSTGRES Full Text Search https://www.postgresql.org/docs/9.5/textsearch.html
 
+### Welcome Aboard
+![Welcome Page View - PLACEHOLDER](public/src/images/captain'slog.gif)
+
 # live-long-and-prosper
 
 Live Site Link: https://captainslog-2323.herokuapp.com/
