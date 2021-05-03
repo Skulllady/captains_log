@@ -13,7 +13,7 @@ function Navigation({ isLoaded }) {
         <button className="custom-btn button"><span>Welcome Aboard!</span><span>Sign Up</span></button>
       </NavLink>
       <NavLink to="/login">
-        <button className="custom-btn button"><span>Welcome Back!</span><span>Log In</span></button>
+        <button className="custom-btn button"><span>Beam Me Up!</span><span>Log In</span></button>
       </NavLink>
       <DemoUser />
     </>

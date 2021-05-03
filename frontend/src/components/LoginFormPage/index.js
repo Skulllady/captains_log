@@ -52,7 +52,7 @@ function LoginFormPage() {
             required
           />
         </label>
-        <button type="submit" className="custom-btn button"><span>Welcome Back!</span><span>Log In</span></button>
+        <button type="submit" className="custom-btn button"><span>Beam Me Up!</span><span>Log In</span></button>
       </form>
     </SplashContainer >
   );
