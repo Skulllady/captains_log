@@ -10,6 +10,14 @@ body{
   background-image: url("images/background-image.jpg");
   background-color: black;
   color: rgb(224, 212, 212);
+  font-family: monospace;
+  padding-bottom: 80px;
+}
+
+.container{
+  display: flex;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .button{

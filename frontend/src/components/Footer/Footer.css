@@ -1,17 +1,16 @@
 footer{
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   position: fixed;
   bottom: 0;
   width: 100%;
+  background-image: url("../../images/background-image.jpg");
+  background-color: black;
   }
-p.optional-footer {
-  display: none;
-}
 
 .footer a{
   padding-left: 10px;
   padding-right: 10px;
   height: 20px;
+
 }
 
 .footer {
@@ -22,6 +21,8 @@ p.optional-footer {
   float: left;
   font-size: 18px;
   padding: 15px;
+  justify-content: center;
+width: 100%;
 }
 
 .footer img {

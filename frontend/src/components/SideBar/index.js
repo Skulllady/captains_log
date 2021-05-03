@@ -12,10 +12,15 @@ function SideBar({ sessionUser }) {
 
   return (
     <>
-      <LoggedInHeader user={sessionUser} />
-      <NavLink to="/notes">All Notes</NavLink>
-      <NavLink to="/notes/new">➕ Create Note</NavLink>
-      <NavLink to="/notes/search">Search</NavLink>
+      <div className="sidebar-container">
+        <NavLink to="/notes">
+          <button type="submit" className="custom-btn button"><span>All Notes</span><span>All Notes</span></button>
+        </NavLink>
+        <NavLink to="/notes/new">
+          <button type="submit" className="custom-btn button"><span>➕ Create Note</span><span>➕ Create Note</span></button>
+        </NavLink>
+        <NavLink to="/notes/search"><button type="submit" className="custom-btn button"><span>Search</span><span>Search</span></button></NavLink>
+      </div>
     </>
   )
 }

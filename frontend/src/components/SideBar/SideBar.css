@@ -1,0 +1,9 @@
+.sidebar-container{
+  display: flex;
+  flex-direction: column;
+  padding-right: 30px;
+}
+
+.sidebar-container a{
+padding-bottom: 25px;
+}

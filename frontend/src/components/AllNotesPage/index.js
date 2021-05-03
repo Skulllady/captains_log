@@ -4,7 +4,7 @@ import { getNotes } from "../../store/notes.js";
 import '../../index.css';
 import './AllNotesPage.css';
 import ReactHtmlParser from 'react-html-parser';
-import EditNoteFormPage from "../EditNoteFormPage"
+import SideBar from "../SideBar"
 import { NavLink, Redirect } from 'react-router-dom';
 
 
@@ -24,21 +24,23 @@ function AllNotesPage({ user }) {
 
   return (
     <>
-      <div>
-        <ul className="all-notes"> ALL YOUR NOTES
+      <div className="container">
+        <SideBar />
+        <div className="all-notes">
+          <h1> All Notes </h1>
           {notesList && notesList.map((eachNote) => {
-          return (
-            <>
-              <NavLink to={`/notes/${eachNote.id}`}>
-                <hr />
-                <h3><b>{eachNote.title}</b></h3>
-                <p>{ReactHtmlParser(eachNote.content)}</p>
-                <img src={eachNote.img} width="100px" height="100px" />
-              </NavLink>
-            </>
-          )
-        })}
-        </ul>
+            return (
+              <>
+                <NavLink to={`/notes/${eachNote.id}`}>
+                  <hr />
+                  <h3><b>{eachNote.title}</b></h3>
+                  <p>{ReactHtmlParser(eachNote.content)}</p>
+                  <img src={eachNote.img} width="100px" height="100px" />
+                </NavLink>
+              </>
+            )
+          })}
+        </div>
       </div>
     </>
   );

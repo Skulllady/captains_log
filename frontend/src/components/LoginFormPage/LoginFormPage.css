@@ -2,18 +2,18 @@
 display: flex;
 flex-direction: column;
 align-items: left;
-font-size: 20px;
 }
 
 .auth-form input{
-  float :right;
+  float: right;
   margin-left: 25px;
   height: 15px;
   padding: 10px;
   width: 200px;
-
+  font-size: 20px;
 }
 
 .auth-form label{
   line-height: 1.7;
+  font-size: 20px;
 }

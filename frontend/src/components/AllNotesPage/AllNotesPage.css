@@ -1,9 +1,12 @@
-#root{
-display: grid;
-}
 
 ul.all-notes {
 display: flex;
 flex-direction: column;
 
+}
+
+.all-notes a{
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
 }

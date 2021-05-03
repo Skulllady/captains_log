@@ -5,7 +5,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import LoginFormPage from './components/LoginFormPage'
-import SideBar from './components/SideBar'
+import LoggedInHeader from './components/LoggedInHeader'
 import AllNotesPage from './components/AllNotesPage'
 import CreateNotePage from './components/CreateNotePage'
 import EditNoteFormPage from './components/EditNoteFormPage'
@@ -28,7 +28,7 @@ function App() {
   //check if user is logged in using sessionUser
   return (
     <>
-      {sessionUser ? <SideBar sessionUser={sessionUser} /> :
+      {sessionUser ? <LoggedInHeader user={sessionUser} /> :
         <Navigation isLoaded={isLoaded} />
       }
       {isLoaded && (

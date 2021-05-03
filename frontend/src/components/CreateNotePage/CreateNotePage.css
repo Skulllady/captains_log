@@ -3,3 +3,8 @@
   filter: invert(1);
   color: rgb(0, 0, 0);
 }
+
+.auth-form input{
+  float: none;
+  margin-left: 20px;
+}

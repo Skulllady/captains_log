@@ -4,6 +4,8 @@ import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, useHistory, NavLink } from 'react-router-dom';
 import { createNote } from '../../store/notes';
+import "../LoginFormPage/LoginFormPage.css";
+import SideBar from "../SideBar"
 import RichTextEditor from 'react-rte'
 
 //Rich text editor implementation
@@ -67,26 +69,32 @@ function CreateNotePage({ user }) {
   };
 
   return (
-    <div>
-      <form onSubmit={onSubmitAddNote}>
-        <input
-          type="text"
-          placeholder="note title"
-          value={title}
-          onChange={updateTitle}
-        ></input>
+    <div className="container">
+      <SideBar />
+      <form onSubmit={onSubmitAddNote} className="auth-form">
+        <h1>Create a Note</h1>
+        <label>Note Title
+          <input
+            type="text"
+            placeholder="note title"
+            value={title}
+            onChange={updateTitle}
+          />
+        </label>
+        <label> Image URL
+          <input
+            type="text"
+            placeholder="image URL"
+            value={img}
+            onChange={updateImg}
+          />
+        </label>
         <RichTextEditor
           toolbarConfig={toolbarConfig}
           value={value}
           onChange={setValue}
           className="RichTextEditor"
         />
-        <input
-          type="text"
-          placeholder="image URL"
-          value={img}
-          onChange={updateImg}
-        ></input>
         <button type="submit" className="custom-btn button"><span>Make It So!</span><span>Save Note</span></button>      </form>
     </div>
   );
