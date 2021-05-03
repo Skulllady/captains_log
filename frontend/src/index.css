@@ -9,7 +9,6 @@ label{
 body{
   background-image: url("images/background-image.jpg");
   background-color: black;
-  background-size: cover;
   color: rgb(224, 212, 212);
 }
 
