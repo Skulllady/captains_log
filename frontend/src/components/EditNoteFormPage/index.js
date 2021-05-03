@@ -10,10 +10,7 @@ function EditNoteFormPage({ user }) {
   const dispatch = useDispatch();
   const history = useHistory();
   const { id } = useParams();
-  const note = useSelector(state => {
-    debugger
-    return state.notes[id]
-  })
+  const note = useSelector(state => state.notes[id])
   const [title, setTitle] = useState(note.title);
   const [value, setValue] = useState(() => RichTextEditor.createValueFromString(note.content, 'html'));
   const [img, setImg] = useState(note.img);

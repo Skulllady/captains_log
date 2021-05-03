@@ -28,7 +28,6 @@ function Search({ user }) {
         />
         <ul>
           {searchList && searchList.map((eachNote) => {
-            console.log(eachNote)
             return (
               <>
                 <li>{eachNote.title}</li>

@@ -22,7 +22,6 @@ const searchedNotes = notes => ({
 
 //thunk action creater
 export const createNote = (noteData) => async dispatch => {
-  console.log("noteData", noteData)
   const res = await csrfFetch(`/api/notes`, {
     method: 'POST',
     headers: {

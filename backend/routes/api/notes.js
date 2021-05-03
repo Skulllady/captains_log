@@ -22,7 +22,6 @@ router.post('/', requireAuth, asyncHandler(async function (req, res) {
 
 router.get('/search', requireAuth, asyncHandler(async function (req, res) {
   const userId = req.user.id;
-  console.log(req.params)
   const query = req.query.query;
   const listAllNotes = await NotesRepository.searchNotesByUserId(query, userId);
   return res.json(listAllNotes);
@@ -36,9 +35,10 @@ router.put('/:id', requireAuth, asyncHandler(async function (req, res) {
   if (note) {
     await NotesRepository.editNote(note, req.body);
     return res.json(note)
-  } else {
-    console.log("TODO: ERROR 404, Note not found")
   }
+  //TODO else {
+  // console.log("TODO: ERROR 404, Note not found")
+  // }
 }))
 
 module.exports = router;

@@ -58,7 +58,6 @@ function CreateNotePage({ user }) {
   const onSubmitAddNote = async (e) => {
     e.preventDefault();
     let createdNote = await dispatch(createNote({ title, content: value.toString('html'), img }))
-    console.log(createdNote);
     if (createdNote) {
       history.push(`/notes/${createdNote.id}`);
       setTitle('');

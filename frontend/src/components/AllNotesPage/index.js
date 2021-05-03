@@ -10,36 +10,32 @@ import { NavLink } from 'react-router-dom';
 
 function AllNotesPage({ user }) {
   const dispatch = useDispatch();
-  const notesList = useSelector(state => {
-    console.log("state", state)
-    console.log("state.NOTES", state.notes)
-    return state.notes.notesList
-  })
+  const notesList = useSelector(state => state.notes.notesList })
 
-  useEffect(() => {
-    dispatch(getNotes())
-  }, [dispatch])
+useEffect(() => {
+  dispatch(getNotes())
+}, [dispatch])
 
-  return (
-    <>
-      <div>
-        <ul className="all-notes"> ALL YOUR NOTES
+return (
+  <>
+    <div>
+      <ul className="all-notes"> ALL YOUR NOTES
           {notesList && notesList.map((eachNote) => {
-          return (
-            <>
-              <NavLink to={`/notes/${eachNote.id}`}>
-                <hr />
-                <h3><b>{eachNote.title}</b></h3>
-                <p>{ReactHtmlParser(eachNote.content)}</p>
-                <img src={eachNote.img} width="100px" height="100px" />
-              </NavLink>
-            </>
-          )
-        })}
-        </ul>
-      </div>
-    </>
-  );
+        return (
+          <>
+            <NavLink to={`/notes/${eachNote.id}`}>
+              <hr />
+              <h3><b>{eachNote.title}</b></h3>
+              <p>{ReactHtmlParser(eachNote.content)}</p>
+              <img src={eachNote.img} width="100px" height="100px" />
+            </NavLink>
+          </>
+        )
+      })}
+      </ul>
+    </div>
+  </>
+);
 }
 
 export default AllNotesPage;
