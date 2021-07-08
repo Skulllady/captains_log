@@ -8,3 +8,7 @@ async function createNotebook(notebookData, userId) {
     userId
   })
 }
+
+module.exports = {
+  createNotebook
+}

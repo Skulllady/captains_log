@@ -46,6 +46,7 @@ function Search({ user }) {
                 <>
                   <NavLink to={`/notes/${eachNote.id}`}>
                     <hr />
+                    <h2>Search results: </h2>
                     <h3><b>{eachNote.title}</b></h3>
                     <p>{ReactHtmlParser(eachNote.content)}</p>
                     <img src={eachNote.img} width="100px" height="100px" />
